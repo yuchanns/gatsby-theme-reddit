@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-theme-reddit",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.21.33",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "gatsby": "^2.21.33",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-theme-blog-core": "^1.5.8",
+    "react-helmet": "^6.0.0"
+  }
+}
