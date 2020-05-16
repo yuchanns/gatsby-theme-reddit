@@ -1,0 +1,59 @@
+@import '../styles/global-style.scss';
+
+.header {
+  flex: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 80;
+  margin-top: 0;
+  color: $bodyText;
+  height: 48px;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  &-container {
+    align-items: center;
+    display: inline-flex;
+    background-color: $body;
+    border-bottom: 1px solid $line;
+    box-sizing: border-box;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 0 20px;
+    &-left {
+      align-items: center;
+      display: inline-flex;
+      flex-direction: row;
+      flex-grow: 1;
+    }
+    &-right {
+      align-items: center;
+      display: inline-flex;
+      flex-direction: row;
+      flex-grow: 0;
+    }
+  }
+  &-link {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+  }
+  &-icon {
+    height: 32px;
+    padding: 8px 8px 8px 0;
+    width: 32px;
+  }
+  &-title {
+    display: none;
+    height: 18px;
+    margin-right: 20px;
+    width: auto;
+    @media (min-width: $mediumMinWidth) {
+      display: block;
+    }
+  }
+}

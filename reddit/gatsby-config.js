@@ -5,7 +5,8 @@ module.exports = options => {
         resolve: `gatsby-theme-blog-core`,
         options,
       },
-      `gatsby-plugin-react-helmet`
+      `gatsby-plugin-react-helmet`,
+      `gatsby-plugin-sass`
     ].filter(Boolean)
   }
 }
