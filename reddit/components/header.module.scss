@@ -56,4 +56,181 @@
       display: block;
     }
   }
+  &-nav {
+    border-color: $line;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    height: 36px;
+    position: relative;
+    width: 72px;
+    @media (min-width: $minMinWidth) {
+      width: 270px;
+    }
+    &:hover {
+      border-color: $line;
+    }
+    &-open {
+      border-radius: 4px 4px 0 0;
+      @extend .header-nav:hover
+    }
+    &-btn {
+      background-color: $body;
+      bottom: 0;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: $bodyText;
+      height: 100%;
+      left: 0;
+      line-height: 34px;
+      overflow: hidden;
+      padding-left: 40px;
+      padding-right: 56px;
+      position: absolute;
+      text-align: left;
+      text-overflow: ellipsis;
+      top: 0;
+      white-space: nowrap;
+      width: 100%;
+    }
+    &-title {
+      display: none;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      @media (min-width: $minMinWidth) {
+        display: inline;
+      }
+      &-text {
+        display: inline;
+      }
+    }
+    &-icon {
+      height: 22px;
+      left: 10px;
+      margin-top: -11px;
+      max-height: 22px;
+      max-width: 22px;
+      position: absolute;
+      top: 50%;
+      width: 22px;
+      color: #0079d3;
+      fill: #0079d3;
+    }
+    &-expand {
+      fill: $actionIcon;
+      height: 20px;
+      margin-top: -10px;
+      pointer-events: none;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      width: 20px;
+      vertical-align: middle;
+      margin-left: 2px;
+      display: inline-block;
+      &-open {
+        cursor: pointer;
+        fill: $navIcon;
+        height: 16px;
+        margin-top: -7px;
+        position: absolute;
+        right: 36px;
+        top: 50%;
+        width: 16px;
+        @media (max-width: $maxMinWidth) {
+          display: none;
+        }
+      }
+    }
+    &-list {
+      background-color: $body;
+      border-top-width: 1px;
+      border: 1px solid $line;
+      border-top: 0 solid $line;
+      border-radius: 0 0 4px 4px;
+      box-sizing: border-box;
+      color: $bodyText;
+      left: -1px;
+      margin-top: -1px;
+      max-height: 482px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      padding-bottom: 16px;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      width: 270px;
+    }
+    &-filter {
+      background-color: $field;
+      border: 1px solid $line;
+      color: $bodyText;
+      height: 30px;
+      margin: 16px 16px 0;
+      outline: none;
+      padding: 0 6px;
+      box-sizing: border-box;
+      width: calc(100% - 32px);
+      &:hover {
+        background-color: $body;
+        border: 1px solid $button;
+      }
+      &:focus {
+        @extend .header-nav-filter:hover
+      }
+    }
+    &-feeds {
+      padding: 16px 24px 8px;
+      color: $actionIcon;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 16px;
+      text-transform: uppercase;
+      &-item {
+        padding: 8px 24px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        &:hover {
+          background-color: $field;
+        }
+        &-icon {
+          flex-grow: 0;
+          height: 20px;
+          max-height: 20px;
+          max-width: 20px;
+          width: 20px;
+          color: $button;
+          fill: $button;
+        }
+        &-text {
+          flex-grow: 1;
+          font-size: 14px;
+          line-height: 18px;
+          margin-left: 8px;
+          max-width: 208px;
+          overflow: hidden;
+          text-align: left;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &-star {
+          flex-grow: 0;
+          flex-shrink: 0;
+          font-size: 12px;
+          height: 20px;
+          line-height: 13px;
+          vertical-align: middle;
+          width: 20px;
+          fill: $line;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+.icon-radius {
+  border-radius: 100%;
 }
