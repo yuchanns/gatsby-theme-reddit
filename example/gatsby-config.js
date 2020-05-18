@@ -18,7 +18,7 @@ module.exports = {
         name: 'Repo',
         color: '',
         logo: '/yuchanns.jpg',
-        url: 'https://github.com/yuchanns/vuepress-theme-reddit',
+        url: 'https://github.com/yuchanns/gatsby-theme-reddit',
         extern: true
       }
     ],

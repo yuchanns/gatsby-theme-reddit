@@ -180,11 +180,11 @@ const svgProps = {
   ]
 }
 
-const SvgIcon = ({ svg = {}, type = 'link', className }) => {
+const SvgIcon = ({ svg = {}, type = 'link', className, isShow = true }) => {
   Object.assign(svgAttrs, svg)
   const props = svgProps[type]
 
-  return (
+  return isShow && (
     <svg {...svgAttrs} className={className}>
       {props.map((prop, index) => {
         const CustomTag = prop.name
