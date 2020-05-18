@@ -229,6 +229,54 @@
       }
     }
   }
+  &-search {
+    @media (min-width: $minMinWidth) {
+      width: 270px;
+    }
+    fill: $navIcon;
+    flex-grow: 1;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 36px;
+    &-label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 18px;
+      margin-left: 16px;
+      margin-top: -9px;
+    }
+    &-icon {
+      fill: $actionIcon;
+      width: 18px;
+      height: 18px;
+    }
+    &-input {
+      appearance: none;
+      background-color: $field;
+      border-radius: 4px;
+      border: 1px solid $line;
+      box-shadow: none;
+      color: $bodyText;
+      display: block;
+      height: 36px;
+      outline: none;
+      padding: 0 16px 0 40px;
+      width: 100%;
+      &:focus {
+        background-color: $body;
+        border: 1px solid $button;
+      }
+      &:hover {
+        @extend .header-search-input:focus
+      }
+    }
+  }
 }
 
 .icon-radius {

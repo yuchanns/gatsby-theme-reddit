@@ -144,10 +144,11 @@ const Nav = ({ location }) => {
           type="nav-expand"
           svg={{ viewBox: viewBox }} />
       </button>
-      {open && <SvgIcon
+      {open &&
+        <SvgIcon
           className={styles.headerNavExpandOpen}
           type="nav-expand-open"
-        svg={{ viewBox: viewBox }} />}
+          svg={{ viewBox: viewBox }} />}
       {open &&
         <div className={styles.headerNavList}>
           <input
@@ -179,6 +180,32 @@ const Nav = ({ location }) => {
               <div><SvgStar className={styles.headerNavFeedsItemStar} /></div>
             </Link>
           ))}
+          {filteredNavData.others.length > 0 &&
+            <div className={styles.headerNavFeeds}>Other</div>
+          }
+        {filteredNavData.others.map((other, k) => (
+          !other.extern ?
+          <Link
+            className={styles.headerNavFeedsItem}
+            to={other.url}
+            key={`${other.type}-${k}`}>
+            <img
+              className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
+              src={other.logo}
+              alt="sub icon" />
+            <span className={styles.headerNavFeedsItemText}>{other.name}</span>
+          </Link> :
+          <a
+            className={styles.headerNavFeedsItem}
+            href={other.url}
+            key={`${other.type}-${k}`}>
+            <img
+              className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
+              src={other.logo}
+              alt="sub icon" />
+            <span className={styles.headerNavFeedsItemText}>{other.name}</span>
+          </a>
+        ))}
         </div>
       }
     </div>
