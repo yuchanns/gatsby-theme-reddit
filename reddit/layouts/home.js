@@ -1,9 +1,13 @@
 import React from 'react'
 import Header from '../components/header'
+import SEO from '../components/seo'
 
 const Home = ({location}) => {
   return (
-    <Header location={location} />
+    <div>
+      <Header location={location} />
+      <SEO title="Home" />
+    </div>
   )
 }
 

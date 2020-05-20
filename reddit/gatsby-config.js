@@ -2,6 +2,7 @@ module.exports = (options = {}) => {
   return {
     siteMetadata: {
       title: 'Gatsby Theme - Reddit',
+      siteUrl: 'https://gatsby-theme-reddit.netlify.app',
       description: `A Reddit Style Blog Theme for Gatsby`,
       author: {
         name: 'yuchanns',
