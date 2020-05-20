@@ -1,0 +1,18 @@
+@import '../styles/global-style.scss';
+
+.aside {
+  margin-left: 24px;
+  margin-top: 0;
+  display: none;
+  flex: 0 0 312px;
+  width: 312px;
+  @media (min-width: $mainMinWidth) {
+    display: block;
+  }
+  &-inner {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
