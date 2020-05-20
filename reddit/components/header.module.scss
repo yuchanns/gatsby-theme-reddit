@@ -1,5 +1,4 @@
-@import '../styles/global-style.scss';
-
+@import "../styles/variables.scss";
 .header {
   flex: 0;
   left: 0;
@@ -19,9 +18,7 @@
     background-color: $body;
     border-bottom: 1px solid $line;
     box-sizing: border-box;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 0 20px;
     &-left {
