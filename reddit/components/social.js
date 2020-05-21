@@ -1,7 +1,7 @@
 import React from 'react'
 import SvgIcon from './icons/svg-icon'
 import { useStaticQuery, graphql } from "gatsby"
-import styles from './header.module.scss'
+import styles from '../styles/header.module.scss'
 
 const Social = () => {
   // resolve with snsData

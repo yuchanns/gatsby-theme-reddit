@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from './footer'
-import styles from './aside.module.scss'
+import styles from '../styles/aside.module.scss'
 
 const Aside = () => {
   return (

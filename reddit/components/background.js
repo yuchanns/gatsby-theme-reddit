@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './layout.module.scss'
+import styles from '../styles/layout.module.scss'
 
 const Background = () => {
   return (

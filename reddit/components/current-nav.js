@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import SvgIcon from './icons/svg-icon'
-import styles from './header.module.scss'
+import styles from '../styles/header.module.scss'
 
 const CurrentNav = ({ navData, location }) => {
   const viewBox = "0 0 20 20"

@@ -1,6 +1,6 @@
 import React from 'react'
 import SvgStar from './icons/svg-reddit-star'
-import styles from './header.module.scss'
+import styles from '../styles/header.module.scss'
 import SvgIcon from './icons/svg-icon'
 import { Link } from "gatsby"
 

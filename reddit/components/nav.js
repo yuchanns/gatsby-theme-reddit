@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react'
-import styles from './header.module.scss'
+import styles from '../styles/header.module.scss'
 import SvgIcon from './icons/svg-icon'
 import NavSearch from './nav-search'
 import CurrentNav from './current-nav'

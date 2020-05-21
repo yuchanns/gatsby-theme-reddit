@@ -9,6 +9,12 @@ exports.createPages = async ({ graphql, actions }) => {
     component: path.resolve(__dirname, 'layouts/home.js'),
     context: {}
   })
+
+  createPage({
+    path: '/top',
+    component: path.resolve(__dirname, 'layouts/home.js'),
+    context: {}
+  })
   
   createPage({
     path: '/404/',

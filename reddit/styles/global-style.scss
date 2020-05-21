@@ -39,5 +39,9 @@ input, textarea, [contenteditable] {
 
 @font-face {
   font-family: 'IBMPlexSans';
-  src: url("../styles/fonts/IBMPlexSans-Regular.ttf");
+  src: url("./fonts/IBMPlexSans-Regular.ttf");
+}
+@font-face {
+  font-family: 'redesignFont';
+  src: url("./fonts/redesignFont.ttf");
 }

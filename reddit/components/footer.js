@@ -1,7 +1,7 @@
 import React from 'react'
 import UseNavData from './use-nav-data'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import styles from './footer.module.scss'
+import styles from '../styles/footer.module.scss'
 
 const Footer = () => {
   const { site: { siteMetadata: { author: { name } } } } = useStaticQuery(

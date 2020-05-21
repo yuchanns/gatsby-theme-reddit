@@ -5,7 +5,7 @@ import Nav from './nav'
 import Search from './search'
 import Social from './social'
 import UserInfo from './user-info'
-import styles from './header.module.scss'
+import styles from '../styles/header.module.scss'
 import { Link } from 'gatsby'
 
 const Header = ({ location }) => {

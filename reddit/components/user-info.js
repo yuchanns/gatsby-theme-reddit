@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import styles from './header.module.scss'
+import styles from '../styles/header.module.scss'
 
 const UserInfo = () => {
   // resolve with userData

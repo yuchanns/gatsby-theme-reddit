@@ -1,0 +1,187 @@
+@import './variables.scss';
+
+.field {
+  align-items: center;
+  background-color: $body;
+  border: 1px solid $sidebarBorder;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 56px;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  padding: 0 12px;
+  &-container {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    &-mobile {
+      @extend .field-container;
+      border-radius: 20px;
+      height: 32px;
+      margin-right: 8px;
+      padding: 0 8px;
+      background: $field;
+      @media (min-width: 672px) {
+        display: none;
+      }
+      @media (min-width: $mainMinWidth) {
+        display: flex;
+      }
+      @media (min-width: 1010px) {
+        display: none;
+      }
+    }
+  }
+  &-tab {
+    display: none;
+    border-radius: 20px;
+    height: 32px;
+    margin-right: 8px;
+    padding: 0 8px;
+    background: $body;
+    color: $actionIcon;
+    fill: $actionIcon;
+    align-items: center;
+    @media (min-width: 672px) {
+      display: inline-flex;
+    }
+    @media (min-width: $mainMinWidth) {
+      display: none;
+    }
+    @media (min-width: 1010px) {
+      display: inline-flex;
+    }
+    &:hover {
+      background: $field;
+      color: $bodyText;
+      fill: $bodyText;
+    }
+    &:active {
+      @extend .field-tab:hover;
+    }
+    &:focus {
+      @extend .field-tab:hover;
+    }
+    &-text {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      margin: 0 4px;
+      text-transform: capitalize;
+    }
+    &-active {
+      background: $field!important;
+      color: $button!important;
+      fill: $button!important;
+    }
+    &-icon {
+      fill: inherit;
+      height: 20px;
+      width: 20px;
+      display: block;
+      margin: 0 auto;
+    }
+    &-mobile {
+      align-items: center;
+      border-radius: 4px;
+      display: flex;
+    }
+    &-button {
+      @extend .field-tab-active;
+      background: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      text-transform: capitalize;
+      display: flex;
+      border: none;
+      white-space: nowrap;
+      align-items: center;
+      flex-direction: row;
+      text-align: left;
+      width: 100%;
+      &-text {
+        display: inline-block;
+      }
+      &-label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 2px;
+        width: 20px;
+      }
+      &-icon {
+        fill: $button;
+        display: block;
+        height: 16px;
+        margin: 0 auto;
+        width: 16px;
+      }
+      &-expand {
+        margin-right: -4px;
+        display: inline-block;
+        vertical-align: text-bottom;
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        margin-left: 2px;
+        &:before {
+          -webkit-font-smoothing: antialiased;
+          content: "\f111";
+          font-family: "redesignFont";
+        }
+      }
+    }
+    &-list {
+      left: 21px;
+      top: 85px;
+      margin-left: -5px;
+      min-width: 100px;
+      border: 1px solid $line;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 $bodyTextAlpha20;
+      color: $bodyText;
+      overflow: hidden;
+      background-color: $body;
+      position: absolute;
+      z-index: 10;
+    }
+    &-item {
+      color: $actionIcon;
+      border-top: 1px solid $line;
+      border-bottom: none;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      display: block;
+      padding: 8px;
+      text-transform: capitalize;
+      white-space: nowrap;
+      fill: $actionIcon;
+      text-decoration: none;
+      &-active {
+        color: $button;
+        fill: $button;
+      }
+      &-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 2px;
+        width: 20px;
+        &-svg {
+          fill: inherit;
+          display: block;
+          height: 16px;
+          margin: 0 auto;
+          width: 16px;
+        }
+      }
+    }
+  }
+}
