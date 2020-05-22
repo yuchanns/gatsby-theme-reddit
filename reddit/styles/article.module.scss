@@ -1,0 +1,176 @@
+@import './variables.scss';
+
+.article {
+  min-height: 1000px;
+  width: 100%;
+  &-item {
+    background-color: $postTransparent20;
+    color: $actionIcon;
+    position: relative;
+    border: 1px solid $line;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: color .5s,fill .5s,box-shadow .5s;
+    cursor: pointer;
+    @media (min-width: 640px) {
+      border-radius: 4px;
+      padding-left: 40px;
+    }
+    &:hover {
+      border: 1px solid $postIcon;
+    }
+    &-side {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      left: 0;
+      padding: 8px 4px 8px 0;
+      position: absolute;
+      top: 0;
+      width: 40px;
+      border-left: 4px solid transparent;
+      &-inner {
+        align-items: center;
+        display: flex;
+        fill: inherit;
+        flex-direction: column;
+      }
+    }
+    &-vote {
+      &-button {
+        height: 24px;
+        width: 24px;
+        &-inner {
+          display: inline-block;
+          overflow: hidden;
+          height: 24px;
+          width: 24px;
+          font-size: 16px;
+          line-height: 24px;
+          color: $actionIcon;
+          border-radius: 2px;
+          cursor: pointer;
+          &:focus {
+            background-color: $navIconFade10;
+            outline: none;
+          }
+          &:hover {
+            @extend .article-item-vote-button-inner:focus;
+            color: $voteText;
+          }
+        }
+      }
+      &-icon {
+        &-up {
+          position: relative;
+          &:before {
+            content: "\f13d";
+            font-family: "redesignFont";
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+        &-down {
+          @extend .article-item-vote-icon-up;
+          &:before {
+            @extend .article-item-vote-icon-up:before;
+            content: "\f110";
+          }
+        }
+      }
+      &-num {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        pointer-events: none;
+        word-break: normal;
+        color: rgb(26, 26, 27);
+      }
+    }
+    &-content {
+      background: rgb(255, 255, 255);
+      position: relative;
+      padding-top: 8px;
+      &-info {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 0 8px 8px;
+        position: relative;
+        &-inner {
+          flex: 1 1 auto;
+          align-items: center;
+          overflow: hidden;
+          &-label {
+            display: inline;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            align-items: center;
+            color: inherit;
+          }
+        }
+        &-postby {
+          color: rgb(120, 124, 126);
+          flex: 0 0 auto;
+          margin-right: 3px;
+        }
+        &-author {
+          flex: 0 0 auto;
+          display: inline-block;
+          &-name {
+            color: rgb(120, 124, 126);
+            margin-right: 3px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        &-date {
+          color: rgb(120, 124, 126);
+          margin-right: 3px;
+          text-decoration: none;
+          display: inline-block;
+          flex: 0 0 auto;
+        }
+      }
+      &-title {
+        margin: 0 8px;
+        &-outter {
+          display: inline;
+          position: relative;
+          text-decoration: none;
+          word-break: break-word;
+        }
+        &-inner {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 22px;
+          display: inline;
+          padding-right: 5px;
+          word-wrap: break-word;
+          color: #222222;;
+        }
+        &-h3 {
+          display: inline;
+        }
+      }
+      &-excerpt {
+        margin-top: 8px;
+      }
+      &-mask {
+        max-height: 250px;
+        mask-image: linear-gradient(180deg,#000 60%,transparent);
+        overflow: hidden;
+        padding: 5px 8px 10px;
+      }
+    }
+  }
+}

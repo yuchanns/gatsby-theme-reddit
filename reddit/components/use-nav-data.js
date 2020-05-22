@@ -46,6 +46,7 @@ const useNavData = () => {
       const categories = site.siteMetadata.categories
       categories.forEach(category => {
         communities.push({
+          path: category.path,
           url: '/r/' + category.path,
           type: 'communities',
           color: category.color,
