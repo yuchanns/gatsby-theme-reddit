@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/article.module.scss'
 
-const ArticleItem = ({ post }) => {
+const ArticleItem = ({ post = {}, skeleton = false }) => {
   const voteButton = ({ child }) => {
     return (
       <button className={styles.articleItemVoteButton}>
@@ -11,13 +11,19 @@ const ArticleItem = ({ post }) => {
       </button>
     )
   }
+  let itemClass = `${styles.articleItem}`
+  let excerptClass = `${styles.articleItemContentExcerpt}`
+  if (skeleton) {
+    itemClass += ` ${styles.articleSkeleton}`
+    excerptClass += ` ${styles.articleSkeletonContent}`
+  }
   return (
     <div>
-      <div className={styles.articleItem}>
+      <div className={itemClass}>
         <div className={styles.articleItemSide}>
           <div className={styles.articleItemSideInner}>
             {voteButton({ child: <i className={styles.articleItemVoteIconUp}></i> })}
-            <div className={styles.articleItemVoteNum}>·</div>
+            <div className={styles.articleItemVoteNum}></div>
             {voteButton({child: <i className={styles.articleItemVoteIconDown}></i>})}
           </div>
         </div>
@@ -25,9 +31,9 @@ const ArticleItem = ({ post }) => {
           <div className={styles.articleItemContentInfo}>
             <div className={styles.articleItemContentInfoInner}>
               <div className={styles.articleItemContentInfoInnerLabel}>
-                <span className={styles.articleItemContentInfoPostby}>Posted by</span>
+                <span className={styles.articleItemContentInfoPostby}>{!skeleton && 'Posted by'}</span>
                 <div className={styles.articleItemContentInfoAuthor}>
-                  <span className={styles.articleItemContentInfoAuthorName}>u/{post.author}</span>
+                  <span className={styles.articleItemContentInfoAuthorName}>{!skeleton && `u/${post.author}`}</span>
                 </div>
                 <span className={styles.articleItemContentInfoDate}>{post.date}</span>
               </div>
@@ -40,9 +46,21 @@ const ArticleItem = ({ post }) => {
               </div>
             </div>
           </div>
-          <div className={styles.articleItemContentExcerpt}>
+          <div className={excerptClass}>
             <div className={styles.articleItemContentMask} dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
           </div>
+          {!skeleton && 
+          <div className={styles.articleItemContentFooter}>
+            <div className={styles.articleItemContentFooterInner}>
+              <div className={styles.articleItemContentFooterShare}>
+                <button className={styles.articleItemContentFooterShareBtn}>
+                  <i className={styles.articleItemContentFooterShareIcon}></i>
+                  <span className={styles.articleItemContentFooterText}>share</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          }
         </div>
       </div>
     </div>
