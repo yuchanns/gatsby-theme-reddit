@@ -233,12 +233,31 @@
     height: 156px;
     margin-bottom: -20px;
     overflow: hidden;
-    border-radius: 0;
+    @extend .article-skeleton-loading;
     &:hover {
       border-bottom: none;
     }
     &-content {
       height: 343px;
     }
+    &-loading {
+      border-radius: 0;
+    }
+    &-animate {
+      animation: skeletonAnimation 1.5s ease infinite;
+      background: linear-gradient(90deg,$field,$line,$field);
+      background-size: 200%;
+      border-radius: 4px
+    }
+  }
+}
+
+@keyframes skeletonAnimation {
+  0% {
+      background-position: 0 0;
+  }
+
+  100% {
+      background-position: -200% 0;
   }
 }

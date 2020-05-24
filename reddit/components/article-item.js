@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/article.module.scss'
 
-const ArticleItem = ({ post = {}, skeleton = false }) => {
+const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
   const voteButton = ({ child }) => {
     return (
       <button className={styles.articleItemVoteButton}>
@@ -13,8 +13,17 @@ const ArticleItem = ({ post = {}, skeleton = false }) => {
   }
   let itemClass = `${styles.articleItem}`
   let excerptClass = `${styles.articleItemContentExcerpt}`
+  let infoInner = `${styles.articleItemContentInfoInner}`
+  let contentTitle = `${styles.articleItemContentTitle}`
   if (skeleton) {
-    itemClass += ` ${styles.articleSkeleton}`
+    if (!loading) {
+      itemClass += ` ${styles.articleSkeleton}`
+    } else {
+      itemClass += ` ${styles.articleSkeletonLoading}`
+      infoInner += ` ${styles.articleSkeletonAnimate}`
+      contentTitle += ` ${styles.articleSkeletonAnimate}`
+      excerptClass += ` ${styles.articleSkeletonAnimate}`
+    }
     excerptClass += ` ${styles.articleSkeletonContent}`
   }
   return (
@@ -28,8 +37,8 @@ const ArticleItem = ({ post = {}, skeleton = false }) => {
           </div>
         </div>
         <div className={styles.articleItemContent}>
-          <div className={styles.articleItemContentInfo}>
-            <div className={styles.articleItemContentInfoInner}>
+          <div className={styles.articleItemContentInfo} style={loading ? {width: `232px`} : {}}>
+            <div className={infoInner}>
               <div className={styles.articleItemContentInfoInnerLabel}>
                 <span className={styles.articleItemContentInfoPostby}>{!skeleton && 'Posted by'}</span>
                 <div className={styles.articleItemContentInfoAuthor}>
@@ -39,7 +48,7 @@ const ArticleItem = ({ post = {}, skeleton = false }) => {
               </div>
             </div>
           </div>
-          <div className={styles.articleItemContentTitle}>
+          <div className={contentTitle} style={loading ? {width: `328px`} : {}}>
             <div className={styles.articleItemContentTitleOutter}>
               <div className={styles.articleItemContentTitleInner}>
                 <h3 className={styles.articleItemContentTitleH3}>{post.title}</h3>
