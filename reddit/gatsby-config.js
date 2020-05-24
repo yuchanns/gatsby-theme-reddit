@@ -23,7 +23,14 @@ module.exports = (options = {}) => {
       },
       `gatsby-plugin-smoothscroll`,
       `gatsby-plugin-react-helmet`,
-      `gatsby-plugin-sass`,
+      {
+        resolve: `gatsby-plugin-sass`,
+        options: {
+          cssLoaderOptions: {
+            localIdentName: '[hash:base64:20]'
+          },
+        },
+      },
       {
         resolve: `gatsby-transformer-remark`,
         options: {
