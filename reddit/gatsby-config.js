@@ -48,7 +48,7 @@ module.exports = (options = {}) => {
                   type: "htmlQuery",
                   sourceField: "html",
                   excerptSelector: ".custom-block.snippet .custom-block-body",
-                  stripSelector: "a",
+                  // stripSelector: "a",
                   elementReplacements: [
                       {
                           selector: "h6",
@@ -77,7 +77,7 @@ module.exports = (options = {}) => {
                   sourceField: "html",
                   excerptSelector: "html > *",
                   ignoreSelector: "img, .gatsby-highlight",
-                  stripSelector: "a",
+                  // stripSelector: "a",
                   elementReplacements: [
                       {
                           selector: "h6",

@@ -2,6 +2,7 @@
 
 .custom-block-body {
   color: #1A1A1B;
+  font-family: Noto Sans,Arial,sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -15,6 +16,11 @@
       padding-top: 0;
     }
   }
+  &-code {
+    background: $field;
+    max-width: 100%;
+    overflow: auto;
+  }
   pre {
     display: grid;
     line-height: 1.4;
@@ -24,16 +30,73 @@
     max-width: 100%;
     overflow: auto;
     code {
+      @extend .custom-block-body-code;
       font-family: Noto Mono,Menlo,Monaco,Consolas,monospace;
       font-size: 13px;
       font-weight: 400;
       line-height: 20px;
-      background: $field;
-      max-width: 100%;
-      overflow: auto;
       background-color: transparent;
       color: $bodyText;
       margin: 0;
     }
+  }
+  code {
+    @extend .custom-block-body-code;
+    font-family: Noto Mono,Menlo,Monaco,Consolas,monospace;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $monospaceColor;
+    margin: 0 2px;
+  }
+  a {
+    color: $linkText;
+    text-decoration: underline;
+  }
+  blockquote {
+    quotes: none;
+    border-left: 4px solid $bodyTextAlpha20;
+    margin: 4px 0 4px 8px;
+    padding-left: 8px;
+  }
+  table {
+    border-spacing: 0;
+    border: 2px solid #eee;
+    border-collapse: collapse;
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    overflow-x: auto;
+    word-break: normal;
+    th {
+      text-align: center;
+      border: 1px solid $line;
+      padding: 4px 8px;
+    }
+    tr {
+      background-color: $bodyAlpha80;
+      border: 1px solid #eee;
+      &:nth-child(odd) {
+        background-color: $trOdd
+      }
+    }
+    td {
+      border: 1px solid #eee;
+      color: $bodyText;
+      padding: 4px 8px;
+    }
+  }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: 700;
+  }
+  ul {
+    list-style: disc outside;
+    margin: 4px 0 4px 8px;
+  }
+  li {
+    margin: .4em 1em;
   }
 }
