@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = (posts, dir, countPostsPerPage) => {
   const countPages = Math.ceil(posts.length / countPostsPerPage)
   for (let currentPage = 1; currentPage <= countPages; currentPage++) {
-    const pathSuffix = currentPage > 1 ? currentPage : ''
+    const pathSuffix = currentPage
     const startIndexInclusive = countPostsPerPage * (currentPage - 1)
     const endIndexExclusive = startIndexInclusive + countPostsPerPage
     const pagePosts = posts.slice(startIndexInclusive, endIndexExclusive)

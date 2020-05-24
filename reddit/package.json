@@ -28,6 +28,7 @@
     "gatsby-theme-blog-core": "^1.5.8",
     "gatsby-transformer-remark": "^2.8.13",
     "node-sass": "^4.14.1",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "react-infinite-scroll-component": "^5.0.4"
   }
 }

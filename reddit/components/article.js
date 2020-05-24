@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from '../styles/article.module.scss'
 import ArticleItem from './article-item'
-import UsePosts from './use-posts'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
-const Article = () => {
-  // todo: pagination、fontface
-  const { posts, hasNextPage } = UsePosts({ skip: 0 })
+const Article = ({ posts, hasMore, loadMore }) => {
   return (
     <>
       <div className={styles.article}>
@@ -13,9 +11,13 @@ const Article = () => {
           <ArticleItem key={k} post={post} />
         ))}
       </div>
-      {hasNextPage &&
+      {hasMore &&
         <ArticleItem skeleton={true} />
       }
+      <InfiniteScroll
+        dataLength={posts.length}
+        next={loadMore}
+        hasMore={hasMore} />
     </>
   )
 }
