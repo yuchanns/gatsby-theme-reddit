@@ -1,6 +1,6 @@
-const UseNewPosts = async (page) => {
+const UseNewPosts = async (page, hash) => {
   try {
-    const res = await fetch(`${__PATH_PREFIX__}/paginationJson/top${page}.json`)
+    const res = await fetch(`${__PATH_PREFIX__}/paginationJson/top${page}-${hash}.json`)
 
     return await res.json()
   } catch (err) {

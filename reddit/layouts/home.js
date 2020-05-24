@@ -23,7 +23,7 @@ class Home extends React.Component {
     }
     this.loadMore = () => {
       if (!this.state.hasMore) return false
-      UsePosts(this.state.page).then(res => {
+      UsePosts(this.state.page, this.props.pageContext.hash).then(res => {
         const state = {}
         if (res) {
           state['posts'] = this.state.posts.concat(res)
