@@ -23,6 +23,7 @@
     "gatsby-plugin-excerpts": "^1.1.0",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sass": "^2.3.1",
+    "gatsby-plugin-smoothscroll": "^1.1.0",
     "gatsby-remark-custom-blocks": "^2.3.2",
     "gatsby-theme-blog-core": "^1.5.8",
     "gatsby-transformer-remark": "^2.8.13",

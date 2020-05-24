@@ -21,6 +21,7 @@ module.exports = (options = {}) => {
         resolve: `gatsby-theme-blog-core`,
         options,
       },
+      `gatsby-plugin-smoothscroll`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-sass`,
       {

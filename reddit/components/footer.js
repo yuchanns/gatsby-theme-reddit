@@ -2,6 +2,7 @@ import React from 'react'
 import UseNavData from './use-nav-data'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styles from '../styles/footer.module.scss'
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const Footer = () => {
   const { site: { siteMetadata: { author: { name } } } } = useStaticQuery(
@@ -63,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.footerBannerBtt}>
-        <button className={styles.footerBannerBttBtn}>Back to top</button>
+        <button className={styles.footerBannerBttBtn} onClick={() => scrollTo('html')}>Back to top</button>
       </div>
     </div>
   )
