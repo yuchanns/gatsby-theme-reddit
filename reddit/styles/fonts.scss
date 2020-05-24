@@ -1,0 +1,121 @@
+// IBMPlexSans
+@font-face {
+  font-family: IBMPlexSans;
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/IBMPlexSans/Regular.woff2) format("woff2"), url(./fonts/IBMPlexSans/Regular.woff) format("woff");
+}
+@font-face {
+  font-family: IBMPlexSans;
+  font-weight: 500;
+  font-style: normal;
+  src: url(./fonts/IBMPlexSans/Medium.woff2) format("woff2"), url(./fonts/IBMPlexSans/Medium.woff) format("woff");
+}
+@font-face {
+  font-family: IBMPlexSans;
+  font-weight: 700;
+  font-style: normal;
+  src: url(./fonts/IBMPlexSans/Bold.woff2) format("woff2"), url(./fonts/IBMPlexSans/Bold.woff) format("woff");
+}
+// Noto Sans
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/NotoSans/Regular.woff2) format("woff2"), url(./fonts/NotoSans/Regular.woff) format("woff")
+}
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-style: italic;
+  src: url(./fonts/NotoSans/Italic.woff2) format("woff2"), url(./fonts/NotoSans/Italic.woff) format("woff")
+}
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 700;
+  font-style: normal;
+  src: url(./fonts/NotoSans/Bold.woff2) format("woff2"), url(./fonts/NotoSans/Bold.woff) format("woff")
+}
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 700;
+  font-style: italic;
+  src: url(./fonts/NotoSans/Bold-Italic.woff2) format("woff2"), url(./fonts/NotoSans/Bold-Italic.woff) format("woff")
+}
+// redesignFont
+@font-face {
+  font-family: "redesignFont";
+  src: url(./fonts/redesignFont/redesignFont.eot),
+       url(./fonts/redesignFont/redesignFont.woff),
+       url(./fonts/redesignFont/redesignFont.ttf),
+       url(./fonts/redesignFont/redesignFont.svg);
+}
+// Noto Mono
+@font-face {
+  font-family: Noto Mono;
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/NotoMono/Regular.woff2) format("woff2"), url(./fonts/NotoMono/Regular.woff) format("woff")
+}
+@font-face {
+  font-family: Noto Mono;
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/NotoMono/el-Regular.woff2) format("woff2"), url(./fonts/NotoMono/el-Regular.woff) format("woff");
+  unicode-range: U+0370-03ff, U+1f
+}
+// BentonSans
+@font-face {
+  font-family: BentonSans;
+  font-weight: 300;
+  font-style: normal;
+  src: url(./fonts/BentonSans/Light.woff2) format("woff2"), url(./fonts/BentonSans/Light.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 300;
+  font-style: italic;
+  src: url(./fonts/BentonSans/Light-Italic.woff2) format("woff2"), url(./fonts/BentonSans/Light-Italic.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/BentonSans/Regular.woff2) format("woff2"), url(./fonts/BentonSans/Regular.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 400;
+  font-style: italic;
+  src: url(./fonts/BentonSans/Italic.woff2) format("woff2"), url(./fonts/BentonSans/Italic.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 500;
+  font-style: normal;
+  src: url(./fonts/BentonSans/Medium.woff2) format("woff2"), url(./fonts/BentonSans/Medium.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 500;
+  font-style: italic;
+  src: url(./fonts/BentonSans/Medium-Italic.woff2) format("woff2"), url(./fonts/BentonSans/Medium-Italic.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 700;
+  font-style: normal;
+  src: url(./fonts/BentonSans/Bold.woff2) format("woff2"), url(./fonts/BentonSans/Bold.woff) format("woff")
+}
+@font-face {
+  font-family: BentonSans;
+  font-weight: 700;
+  font-style: italic;
+  src: url(./fonts/BentonSans/Bold-Italic.woff2) format("woff2"), url(./fonts/BentonSans/Bold-Italic.woff) format("woff")
+}
+@font-face {
+  font-family: VCR;
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/VCR/Regular.woff2) format("woff2"), url(./fonts/VCR/Regular.woff) format("woff")
+}

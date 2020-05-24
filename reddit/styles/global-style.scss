@@ -11,6 +11,7 @@ body {
   min-height: calc(100vh - 48px);
   line-height: 1;
   font-family: IBMPlexSans, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased
 }
 
 button {
@@ -37,47 +38,4 @@ input, textarea, [contenteditable] {
   outline: none;
 }
 
-@font-face {
-  font-family: 'IBMPlexSans';
-  src: url("./fonts/IBMPlexSans-Regular.ttf");
-}
-@font-face {
-  font-family: 'redesignFont';
-  src: url("./fonts/redesignFont.ttf");
-}
-@font-face{
-  font-family: Noto Sans;
-  font-weight: 400;
-  font-style: normal;
-  src: url-loader(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Regular-e6bbcdd30d3bd4d6b170bcb6d3552cab.woff) format('woff');
-}
-@font-face{
-  font-family: Noto Sans;
-  font-weight: 400;
-  font-style:italic;
-  src: url-loader(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Italic-5267af566ab853eb9d74db1a78a46c67.woff) format('woff');
-}
-@font-face{
-  font-family:Noto Sans;
-  font-weight:700;
-  font-style:normal;
-  src: url-loader(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Bold-c34ba754b7235b49d33b294ff7a54179.woff) format('woff');
-}
-@font-face{
-  font-family:Noto Sans;
-  font-weight:700;
-  font-style:italic;
-  src: url-loader(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Bold-Italic-255b4934a1f414dd312aa89382d65114.woff) format('woff');
-}
-@font-face{
-  font-family:Noto Mono;
-  font-weight:400;
-  font-style:normal;
-  src: url-loader(https://www.redditstatic.com/desktop2x/fonts/NotoMono/Regular-e6bbcdd30d3bd4d6b170bcb6d3552cab.woff) format('woff');
-}
-@font-face{
-  font-family:Noto Mono;
-  font-weight:400;
-  font-style:normal;
-  src: url-loader(https://www.redditstatic.com/desktop2x/fonts/NotoMono/el-Regular-06ee3f893717454d11a16c3e8d0aa9f9.woff) format('woff');
-}
+@import './fonts.scss';
