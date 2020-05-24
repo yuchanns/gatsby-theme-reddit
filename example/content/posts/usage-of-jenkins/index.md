@@ -1,6 +1,7 @@
 ---
 title: 使用Jenkins（一）
 date: 2020-05-05T15:04:00.284Z
+top: 2
 ---
 [[snippet]]
 | ![](/images/jenkins2.png)

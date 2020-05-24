@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = (posts, dir, countPostsPerPage) => {
+module.exports = (posts, dir, file, countPostsPerPage) => {
   const countPages = Math.ceil(posts.length / countPostsPerPage)
   for (let currentPage = 1; currentPage <= countPages; currentPage++) {
     const pathSuffix = currentPage
@@ -11,7 +11,7 @@ module.exports = (posts, dir, countPostsPerPage) => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir)
     }
-    const filePath = `${dir}/index${pathSuffix}.json`
+    const filePath = `${dir}/${file}${pathSuffix}.json`
     const dataToSave = JSON.stringify(pagePosts)
     fs.writeFile(filePath, dataToSave, err => {
       if (err) {

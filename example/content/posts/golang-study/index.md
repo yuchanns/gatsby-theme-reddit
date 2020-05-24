@@ -3,6 +3,7 @@ title: 读《Go语言学习笔记》
 date: 2019-09-26T00:56:00.284Z
 description: "读《Go语言学习笔记》"
 category: "golang"
+top: 1
 ---
 [[snippet]]
 | 阅读《Go语言学习笔记》随手摘抄——

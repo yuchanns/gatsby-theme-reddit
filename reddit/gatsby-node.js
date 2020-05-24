@@ -1,6 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const useNewPosts = require(`./utils/use-new-posts`)
+const useTopPosts = require(`./utils/use-top-posts`)
 const usePagination = require(`./utils/use-pagination`)
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -25,5 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   const posts = await useNewPosts(graphql)
-  usePagination(posts, path.resolve(`public/paginationJson`), 5)
+  const topPosts = await useTopPosts(graphql)
+  usePagination(posts, path.resolve(`public/paginationJson`), 'index', 5)
+  usePagination(topPosts, path.resolve(`public/paginationJson`), 'top', 5)
 }

@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import TabField from '../components/tab-field'
 import Article from '../components/article'
 import UseNewPosts from '../components/use-new-posts'
+import UseTopPosts from '../components/use-top-posts'
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,9 +15,15 @@ class Home extends React.Component {
       posts: [],
       page: 1,
     }
+    let UsePosts;
+    if (props.location.pathname === '/') {
+      UsePosts = UseNewPosts
+    } else if (props.location.pathname === '/top') {
+      UsePosts = UseTopPosts
+    }
     this.loadMore = () => {
       if (!this.state.hasMore) return false
-      UseNewPosts(this.state.page).then(res => {
+      UsePosts(this.state.page).then(res => {
         const state = {}
         if (res) {
           state['posts'] = this.state.posts.concat(res)

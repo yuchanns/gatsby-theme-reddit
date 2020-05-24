@@ -3,6 +3,7 @@ title: 用redis做队列
 date: 2020-03-15T21:00:00.284Z
 description: "用redis做队列"
 category: "golang"
+top: 1
 ---
 [[snippet]]
 | 最近做一个小型项目，因为**rabbitMQ**等专业软件比较重，故团队决定采用**redis**实现一个轻量的队列。
