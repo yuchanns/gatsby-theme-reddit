@@ -1,5 +1,9 @@
 # gatsby-theme-reddit
-A Reddit Style Blog Theme for Gatsby
+A Reddit Style Blog Theme for GatsbyJS
+
+Get some tired of Vuepress so I start to work with React.
+
+Work in progress very slowly.
 
 ## dev
 ```sh
