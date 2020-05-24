@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 
 const NotFound = ({location}) => {
   return (
-    <div>
+    <>
       <Header location={location}></Header>
       <div className={styles.container}>
         <SEO title="404 not found" />
@@ -15,7 +15,7 @@ const NotFound = ({location}) => {
           <Link className={styles.containerNotfoundBtn} to="/">Go Home</Link>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

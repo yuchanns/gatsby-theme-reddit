@@ -7,14 +7,14 @@ import Article from '../components/article'
 
 const Home = ({location}) => {
   return (
-    <div>
+    <>
       <Header location={location} />
       <LayoutContainer location={location} >
         <SEO title="Home" />
         <TabField location={location} tabPath="/" />
         <Article />
       </LayoutContainer>
-    </div>
+    </>
   )
 }
 

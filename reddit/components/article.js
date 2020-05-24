@@ -7,7 +7,7 @@ const Article = () => {
   // todo: pagination、fontface
   const { posts, hasNextPage } = UsePosts({ skip: 0 })
   return (
-    <div>
+    <>
       <div className={styles.article}>
         {posts.map((post, k) => (
           <ArticleItem key={k} post={post} />
@@ -16,7 +16,7 @@ const Article = () => {
       {hasNextPage &&
         <ArticleItem skeleton={true} />
       }
-    </div>
+    </>
   )
 }
 

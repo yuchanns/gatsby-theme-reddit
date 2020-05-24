@@ -20,7 +20,7 @@ const CurrentNav = ({ navData, location }) => {
   }, [navData, location.pathname])
 
   return (
-    <div>
+    <>
       <span className={styles.headerNavTitle}>
         <h1 className={styles.headerNavTitleText}>
           {currentNav.type === 'communities' ?
@@ -38,7 +38,7 @@ const CurrentNav = ({ navData, location }) => {
           src={currentNav.logo}
           alt="sub icon"
           className={`${styles.headerNavIcon} ${styles.iconRadius}`} />)}
-    </div>
+    </>
   )
 }
 

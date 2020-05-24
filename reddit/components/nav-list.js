@@ -14,38 +14,36 @@ const NavList = ({navList, title}) => {
     component.push((<div className={styles.headerNavFeeds} key={navList[0].name}>{title}</div>))
     let childComponent = []
     if (type === 'feeds') {
-      childComponent = (nav) => {
-        return [
-          (<SvgIcon
+      childComponent = (nav) => (
+        <>
+          <SvgIcon
             className={styles.headerNavFeedsItemIcon}
             type={nav.svg}
-            svg={{ viewBox: viewBox }} key="0" />),
-          (<span className={styles.headerNavFeedsItemText} key="1">{nav.name}</span>)
-        ]
-      }
+            svg={{ viewBox: viewBox }} />
+          <span className={styles.headerNavFeedsItemText}>{nav.name}</span>
+        </>
+      )
     } else if (type === 'communities') {
-      childComponent = (nav) => {
-        return [
-          (<img
+      childComponent = (nav) => (
+        <>
+          <img
             className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
             src={nav.logo}
-            alt="sub icon"
-            key="0" />),
-          (<span className={styles.headerNavFeedsItemText} key="1">{nav.url}</span>),
-          (<div key="2"><SvgStar className={styles.headerNavFeedsItemStar} /></div>)
-        ]
-      }
+            alt="sub icon" />
+          <span className={styles.headerNavFeedsItemText}>{nav.url}</span>
+          <div><SvgStar className={styles.headerNavFeedsItemStar} /></div>
+        </>
+      )
     } else {
-      childComponent = (nav) => {
-        return [
-          (<img
+      childComponent = (nav) => (
+        <>
+          <img
             className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
             src={nav.logo}
-            alt="sub icon"
-            key="0" />),
-          (<span className={styles.headerNavFeedsItemText} key="1">{nav.name}</span>)
-        ]
-      }
+            alt="sub icon" />
+          <span className={styles.headerNavFeedsItemText}>{nav.name}</span>
+        </>
+      )
     }
     component.push(navList.map((nav, k) => {
       if (nav.type === 'others' && nav.extern) {

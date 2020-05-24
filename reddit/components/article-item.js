@@ -18,7 +18,7 @@ const ArticleItem = ({ post = {}, skeleton = false }) => {
     excerptClass += ` ${styles.articleSkeletonContent}`
   }
   return (
-    <div>
+    <>
       <div className={itemClass}>
         <div className={styles.articleItemSide}>
           <div className={styles.articleItemSideInner}>
@@ -63,7 +63,7 @@ const ArticleItem = ({ post = {}, skeleton = false }) => {
           }
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
