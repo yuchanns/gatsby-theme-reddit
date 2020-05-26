@@ -4,8 +4,7 @@ import LayoutContainer from '../components/layout-container'
 import SEO from '../components/seo'
 import TabField from '../components/tab-field'
 import Article from '../components/article'
-import UseNewPosts from '../components/use-new-posts'
-import UseTopPosts from '../components/use-top-posts'
+import UsePosts from '../components/use-posts'
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,15 +14,13 @@ class Home extends React.Component {
       posts: [],
       page: 1,
     }
-    let UsePosts;
-    if (props.location.pathname === '/') {
-      UsePosts = UseNewPosts
-    } else if (props.location.pathname === '/top') {
-      UsePosts = UseTopPosts
-    }
     this.loadMore = () => {
       if (!this.state.hasMore) return false
-      UsePosts(this.state.page, this.props.pageContext.hash).then(res => {
+      UsePosts(
+        this.state.page,
+        this.props.pageContext.hash,
+        this.props.location.pathname === '/top'
+      ).then(res => {
         const state = {}
         if (res) {
           state['posts'] = this.state.posts.concat(res)

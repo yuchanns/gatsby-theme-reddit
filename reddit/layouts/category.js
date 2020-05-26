@@ -4,8 +4,7 @@ import LayoutContainer from '../components/layout-container'
 import SEO from '../components/seo'
 import TabField from '../components/tab-field'
 import Article from '../components/article'
-import UseNewPosts from '../components/use-new-posts'
-import UseTopPosts from '../components/use-top-posts'
+import UsePosts from '../components/use-posts'
 
 class Category extends React.Component {
   constructor(props) {
@@ -15,15 +14,14 @@ class Category extends React.Component {
       posts: [],
       page: 1,
     }
-    let UsePosts;
-    if (props.location.pathname === `/r/${props.pageContext.category.path}`) {
-      UsePosts = UseNewPosts
-    } else if (props.location.pathname === `/r/${props.pageContext.category.path}/top`) {
-      UsePosts = UseTopPosts
-    }
     this.loadMore = () => {
       if (!this.state.hasMore) return false
-      UsePosts(this.state.page, this.props.pageContext.hash, this.props.pageContext.category.path).then(res => {
+      UsePosts(
+        this.state.page,
+        this.props.pageContext.hash,
+        this.props.location.pathname === `/r/${props.pageContext.category.path}/top`,
+        this.props.pageContext.category.path
+      ).then(res => {
         const state = {}
         if (res) {
           state['posts'] = this.state.posts.concat(res)
