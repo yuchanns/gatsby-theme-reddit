@@ -21,7 +21,7 @@ module.exports = async graphql => {
           frontmatter {
             author
             category
-            date(fromNow: true)
+            date
             title
           }
         }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/article.module.scss'
+import { formatDistanceToNow } from 'date-fns'
 
 const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
   const voteButton = ({ child }) => {
@@ -44,7 +45,7 @@ const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
                 <div className={styles.articleItemContentInfoAuthor}>
                   <span className={styles.articleItemContentInfoAuthorName}>{!skeleton && `u/${post.author}`}</span>
                 </div>
-                <span className={styles.articleItemContentInfoDate}>{post.date}</span>
+                <span className={styles.articleItemContentInfoDate}>{!skeleton && formatDistanceToNow(new Date(post.date), { addSuffix: true })}</span>
               </div>
             </div>
           </div>
