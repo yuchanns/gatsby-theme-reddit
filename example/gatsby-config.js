@@ -41,6 +41,12 @@ module.exports = {
         desc: 'The Ubuntu community on Reddit',
         logo: '/images/categories/ubuntu.png',
         name: 'Ubuntu: Linux for Human Beings'
+      },
+      {
+        path: 'devops',
+        color: '#e95420',
+        desc: 'Welcome to devops',
+        name: 'Everything DevOps'
       }
     ]
   },

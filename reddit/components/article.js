@@ -22,12 +22,12 @@ const Article = ({ posts, hasMore, loadMore }) => {
       </>
     )
   } else {
-    return (
+    return hasMore ? (
       <>
         <ArticleItem skeleton={true} loading={true} />
         <ArticleItem skeleton={true} loading={true} />
       </>
-    )
+    ) : (<></>)
   }
 }
 

@@ -26,10 +26,15 @@ const NavList = ({navList, title}) => {
     } else if (type === 'communities') {
       childComponent = (nav) => (
         <>
-          <img
+          {nav.logo ? (<img
             className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
             src={nav.logo}
-            alt="sub icon" />
+            alt="sub icon" />) :
+            (<SvgIcon
+              className={`default-logo ${styles.headerNavFeedsItemIcon}`}
+              type='default-logo'
+              svg={{ viewBox: viewBox }} />)
+          }
           <span className={styles.headerNavFeedsItemText}>{nav.url}</span>
           <div><SvgStar className={styles.headerNavFeedsItemStar} /></div>
         </>

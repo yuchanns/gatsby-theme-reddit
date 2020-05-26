@@ -1,4 +1,15 @@
-module.exports = async graphql => {
+module.exports = async (graphql, top = false, category = null) => {
+  let fields = [`frontmatter___date`]
+  let orders = [`DESC`]
+  let filters = []
+  if (top) {
+    fields = [`frontmatter___top`].concat(fields)
+    orders = [`ASC`].concat(orders)
+  }
+  if (category) {
+    filters = [`frontmatter: {category: {eq: "${category}"}}`].concat(filters)
+  }
+  const sort = `{fields: [${fields.join(`, `)}], order: [${orders.join(`, `)}]}`
   const { data: { site: { siteMetadata: { author: { name }, categories } }, allMarkdownRemark: { nodes } } } = await graphql(`
     {
       site {
@@ -15,7 +26,7 @@ module.exports = async graphql => {
           }
         }
       }
-      allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+      allMarkdownRemark(sort: ${sort}, filter: {${filters.join(`, `)}}) {
         nodes {
           snippet
           frontmatter {

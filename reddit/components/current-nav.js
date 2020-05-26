@@ -9,7 +9,7 @@ const CurrentNav = ({ navData, location }) => {
     if (location.pathname !== '') {
       Object.values(navData).forEach(value => {
         const matchedValue = value.filter(item => {
-          return item.url === location.pathname
+          return item.url === location.pathname || `${item.url}/top` === location.pathname
         })
         if (matchedValue.length > 0) {
           currentNav = matchedValue[0]
@@ -29,15 +29,21 @@ const CurrentNav = ({ navData, location }) => {
           }
         </h1>
       </span>
-      {currentNav.type === 'feeds' ?
+      {currentNav.svg ?
         (<SvgIcon
           className={styles.headerNavIcon}
           type={currentNav.svg}
           svg={{ viewBox: viewBox }} />) :
-        (<img
-          src={currentNav.logo}
-          alt="sub icon"
-          className={`${styles.headerNavIcon} ${styles.iconRadius}`} />)}
+        (currentNav.logo ?
+          (<img
+            src={currentNav.logo}
+            alt="sub icon"
+            className={`${styles.headerNavIcon} ${styles.iconRadius}`} />) :
+          (<SvgIcon
+            className={`default-logo ${styles.headerNavIcon}`}
+            type='default-logo'
+            svg={{ viewBox: viewBox }} />))
+      }
     </>
   )
 }
