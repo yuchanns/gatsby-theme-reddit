@@ -3,11 +3,11 @@ import styles from '../styles/article.module.scss'
 import { formatDistanceToNow } from 'date-fns'
 
 const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
-  const voteButton = ({ child }) => {
+  const VoteButton = ({ children }) => {
     return (
       <button className={styles.articleItemVoteButton}>
         <span className={styles.articleItemVoteButtonInner}>
-          {child}
+          {children}
         </span>
       </button>
     )
@@ -32,9 +32,13 @@ const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
       <div className={itemClass}>
         <div className={styles.articleItemSide}>
           <div className={styles.articleItemSideInner}>
-            {voteButton({ child: <i className={styles.articleItemVoteIconUp}></i> })}
+            <VoteButton>
+              <i className={styles.articleItemVoteIconUp}></i>
+            </VoteButton>
             <div className={styles.articleItemVoteNum}></div>
-            {voteButton({child: <i className={styles.articleItemVoteIconDown}></i>})}
+            <VoteButton>
+              <i className={styles.articleItemVoteIconDown}></i>
+            </VoteButton>
           </div>
         </div>
         <div className={styles.articleItemContent}>

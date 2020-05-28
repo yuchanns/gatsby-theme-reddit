@@ -12,9 +12,9 @@ const NavList = ({navList, title}) => {
   if (navList.length > 0) {
     const type = navList[0].type
     component.push((<div className={styles.headerNavFeeds} key={navList[0].name}>{title}</div>))
-    let childComponent = []
+    let ChildComponent
     if (type === 'feeds') {
-      childComponent = (nav) => (
+      ChildComponent = ({ nav }) => (
         <>
           <SvgIcon
             className={styles.headerNavFeedsItemIcon}
@@ -24,7 +24,7 @@ const NavList = ({navList, title}) => {
         </>
       )
     } else if (type === 'communities') {
-      childComponent = (nav) => (
+      ChildComponent = ({ nav }) => (
         <>
           {nav.logo ? (<img
             className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
@@ -40,7 +40,7 @@ const NavList = ({navList, title}) => {
         </>
       )
     } else {
-      childComponent = (nav) => (
+      ChildComponent = ({ nav }) => (
         <>
           <img
             className={`${styles.headerNavFeedsItemIcon} ${styles.iconRadius}`}
@@ -57,13 +57,13 @@ const NavList = ({navList, title}) => {
             className={styles.headerNavFeedsItem}
             href={nav.url}
             key={`${nav.type}-${k}`}>
-            {childComponent(nav)}
+            <ChildComponent nav={nav} />
           </a>
         )
       } else {
         return (
           <Link className={styles.headerNavFeedsItem} to={nav.url} key={`${nav.name}-${k}`}>
-            {childComponent(nav)}
+            <ChildComponent nav={nav} />
           </Link>
         )
       }
