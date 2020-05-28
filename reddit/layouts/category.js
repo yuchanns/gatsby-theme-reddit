@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import TabField from '../components/tab-field'
 import Article from '../components/article'
 import UsePosts from '../components/use-posts'
+import CategoryAside from '../components/category-side'
 
 class Category extends React.Component {
   constructor(props) {
@@ -45,10 +46,19 @@ class Category extends React.Component {
     return (
       <>
         <Header location={this.props.location} />
-        <LayoutContainer location={this.props.location} >
+        <LayoutContainer
+          asideComponent={CategoryAside}
+          location={this.props.location}
+          show={true}
+          pageContext={this.props.pageContext}>
           <SEO title={this.props.pageContext.category.name} />
-          <TabField location={this.props.location} tabPath={`/r/${this.props.pageContext.category.path}`} />
-          <Article posts={this.state.posts} hasMore={this.state.hasMore} loadMore={this.loadMore} />
+          <TabField
+            location={this.props.location}
+            tabPath={`/r/${this.props.pageContext.category.path}`} />
+          <Article
+            posts={this.state.posts}
+            hasMore={this.state.hasMore}
+            loadMore={this.loadMore} />
         </LayoutContainer>
       </>
     )

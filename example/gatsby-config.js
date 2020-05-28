@@ -30,21 +30,22 @@ module.exports = {
     categories: [
       {
         path: 'golang',
-        color: '#0079d3',
+        color: '#33a8ff',
         desc: 'Ask questions and post articles about the Go programming language and related tools, events etc.',
         logo: '/images/categories/golang.png',
-        name: 'The Go Programming Language'
+        name: 'The Go Programming Language',
+        bg: '/images/categories/golang-bg.png',
       },
       {
         path: 'ubuntu',
         color: '#e95420',
         desc: 'The Ubuntu community on Reddit',
         logo: '/images/categories/ubuntu.png',
-        name: 'Ubuntu: Linux for Human Beings'
+        name: 'Ubuntu: Linux for Human Beings',
+        bg: '/images/categories/ubuntu-bg.png',
       },
       {
         path: 'devops',
-        color: '#e95420',
         desc: 'Welcome to devops',
         name: 'Everything DevOps'
       }

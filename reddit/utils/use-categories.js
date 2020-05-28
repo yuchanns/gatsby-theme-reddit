@@ -6,6 +6,10 @@ module.exports = async graphql => {
         categories {
           path
           name
+          color
+          desc
+          logo
+          bg
         }
       }
     }

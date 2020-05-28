@@ -45,7 +45,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: categoryComponent,
       context: {
         category: category,
-        hash: hash
+        hash: hash,
+        filterCategory: category.path
       }
     })
     createPage({
@@ -53,7 +54,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: categoryComponent,
       context: {
         category: category,
-        hash: hash
+        hash: hash,
+        filterCategory: category.path
       }
     })
     const posts = await usePosts(graphql, false, category.path)

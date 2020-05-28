@@ -5,16 +5,22 @@ import Aside from './aside'
 import styles from '../styles/layout.module.scss'
 
 
-const LayoutContainer = ({ children, location }) => {
+const LayoutContainer = ({
+  children,
+  location,
+  show = false,
+  pageContext = {},
+  asideComponent
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.containerOuter}>
         <Background />
         <div style={{zIndex: 3}}>
-          <Title />
+          <Title show={show} pageContext={pageContext} />
           <div className={styles.containerInner}>
             <div className={styles.containerInnerMain}>{children}</div>
-            <Aside />
+            <Aside pageContext={pageContext}>{asideComponent}</Aside>
           </div>
         </div>
       </div>

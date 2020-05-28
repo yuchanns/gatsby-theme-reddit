@@ -14,4 +14,79 @@
     flex-direction: column;
     height: 100%;
   }
+  &-about{
+    background-color: $body;
+    color: $navIcon;
+    fill: $navIcon;
+    border: 1px solid $sidebarBorder;
+    border-radius: 4px;
+    overflow: visible;
+    word-wrap: break-word;
+    &-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      line-height: 12px;
+      text-transform: uppercase;
+      border-radius: 3px 3px 0 0;
+      color: $body;
+      display: flex;
+      fill: $body;
+      padding: 0 12px 12px;
+      &-label {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        padding: 12px 0 0;
+      }
+      &-text {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+        text-transform: none;
+        display: inline;
+      }
+    }
+    &-content {
+      max-height: none;
+      padding: 12px;
+      &-container {
+        margin-bottom: 8px;
+        position: relative;
+      }
+      &-desc {
+        font-family: Noto Sans,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+        word-wrap: break-word;
+      }
+      &-statistics {
+        display: flex;
+        margin-bottom: 8px;
+        &-start {
+          padding-right: 4px;
+          flex: auto;
+        }
+        &-number {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 20px;
+        }
+        &-unit {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 16px;
+          display: inline-block;
+          word-break: break-word;
+        }
+      }
+    }
+    &-hr {
+      background-color: $line;
+      border: none;
+      height: 1px;
+      margin: 16px 0;
+    }
+  }
 }
