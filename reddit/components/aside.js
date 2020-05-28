@@ -6,7 +6,7 @@ const Aside = ({ children, pageContext, totalCount }) => {
   return (
     <div className={styles.aside}>
       <div className={styles.asideInner}>
-        {children({ pageContext: pageContext, totalCount: totalCount })}
+        {children && children({ pageContext: pageContext, totalCount: totalCount })}
         <Footer />
       </div>
     </div>
