@@ -6,6 +6,7 @@ import TabField from '../components/tab-field'
 import Article from '../components/article'
 import UsePosts from '../components/use-posts'
 import CategoryAside from '../components/category-side'
+import { graphql } from "gatsby"
 
 class Category extends React.Component {
   constructor(props) {
@@ -50,7 +51,8 @@ class Category extends React.Component {
           asideComponent={CategoryAside}
           location={this.props.location}
           show={true}
-          pageContext={this.props.pageContext}>
+          pageContext={this.props.pageContext}
+          totalCount={this.props.data.allMarkdownRemark.totalCount}>
           <SEO title={this.props.pageContext.category.name} />
           <TabField
             location={this.props.location}
@@ -66,3 +68,11 @@ class Category extends React.Component {
 }
 
 export default Category
+
+export const query = graphql`
+  query ($filterCategory: String) {
+    allMarkdownRemark(filter: {frontmatter: {category: {eq: $filterCategory}}}) {
+      totalCount
+    }
+  }
+`

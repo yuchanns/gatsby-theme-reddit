@@ -2,11 +2,11 @@ import React from 'react'
 import Footer from './footer'
 import styles from '../styles/aside.module.scss'
 
-const Aside = ({ children, pageContext }) => {
+const Aside = ({ children, pageContext, totalCount }) => {
   return (
     <div className={styles.aside}>
       <div className={styles.asideInner}>
-        {children({ pageContext: pageContext })}
+        {children({ pageContext: pageContext, totalCount: totalCount })}
         <Footer />
       </div>
     </div>

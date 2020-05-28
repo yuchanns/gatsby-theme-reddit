@@ -1,17 +1,7 @@
 import React from 'react'
 import styles from '../styles/aside.module.scss'
-import { useStaticQuery, graphql } from "gatsby"
 
-const CategoryAside = ({ pageContext }) => {
-  const { allMarkdownRemark: { totalCount } } = useStaticQuery(
-    graphql`
-      query ($filterCategory: String) {
-        allMarkdownRemark(filter: {frontmatter: {category: {eq: $filterCategory}}}) {
-          totalCount
-        }
-      }
-    `
-  )
+const CategoryAside = ({ pageContext, totalCount }) => {
   return (
     <div className={styles.asideAbout}>
       <div

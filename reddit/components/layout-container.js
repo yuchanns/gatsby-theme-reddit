@@ -10,7 +10,8 @@ const LayoutContainer = ({
   location,
   show = false,
   pageContext = {},
-  asideComponent
+  asideComponent,
+  totalCount,
 }) => {
   return (
     <div className={styles.container}>
@@ -20,7 +21,7 @@ const LayoutContainer = ({
           <Title show={show} pageContext={pageContext} />
           <div className={styles.containerInner}>
             <div className={styles.containerInnerMain}>{children}</div>
-            <Aside pageContext={pageContext}>{asideComponent}</Aside>
+            <Aside pageContext={pageContext} totalCount={totalCount}>{asideComponent}</Aside>
           </div>
         </div>
       </div>
