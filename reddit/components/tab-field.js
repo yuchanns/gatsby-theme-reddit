@@ -59,7 +59,7 @@ const TabField = ({ location, tabPath }) => {
         ))}
       </div>
       {open &&
-      <div className={styles.fieldTabList}>
+      <div className={styles.fieldTabList} style={{top: (ref.current.getBoundingClientRect().top + 18)}}>
         {tabs.map((tab, k) => (
           <Link
             activeClassName={styles.fieldTabItemActive}
