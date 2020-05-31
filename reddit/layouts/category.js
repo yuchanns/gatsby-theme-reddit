@@ -6,7 +6,7 @@ import TabField from '../components/tab-field'
 import Article from '../components/article'
 import UsePosts from '../components/use-posts'
 import CategoryAside from '../components/category-side'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 
 class Category extends React.Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import styles from '../styles/footer.module.scss'
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-const Footer = () => {
+const Footer = ({ pageContext }) => {
   const { site: { siteMetadata: { author: { name } } } } = useStaticQuery(
     graphql`
       query {
@@ -64,7 +64,14 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.footerBannerBtt}>
-        <button className={styles.footerBannerBttBtn} onClick={() => scrollTo('html')}>Back to top</button>
+        <button
+          className={styles.footerBannerBttBtn}
+          onClick={() => scrollTo('html')}
+          style={{
+          background: (pageContext.category && pageContext.category.color) ?
+            pageContext.category.color :
+            '#0079D3'
+        }}>Back to top</button>
       </div>
     </div>
   )

@@ -14,7 +14,8 @@ module.exports = (options = {}) => {
       ],
       nav: [],
       sns: [],
-      categories: []
+      categories: [],
+      awesome: [],
     },
     plugins: [
       {

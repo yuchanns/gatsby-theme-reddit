@@ -49,7 +49,12 @@ module.exports = {
         desc: 'Welcome to devops',
         name: 'Everything DevOps'
       }
-    ]
+    ],
+    awesome: [
+      { name: 'Reddit', logo: '/images/awesome/reddit.svg', url: 'https://www.reddit.com', author: 'Condé Nast Digital' },
+      { name: 'Gatsby', svg: '/images/awesome/gatsby.svg', url: 'https://www.gatsbyjs.org', author: 'Gatsbyjs' },
+      { name: 'Default Example', author: 'Anonymous' },
+    ],
   },
   plugins: [
     {

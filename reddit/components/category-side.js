@@ -9,7 +9,7 @@ const CategoryAside = ({ pageContext, totalCount }) => {
         style={{
           background: pageContext.category.color ?
             pageContext.category.color :
-            '#33a8ff'
+            '#0079D3'
         }}>
         <div className={styles.asideAboutTitleLabel}>
           <h2 className={styles.asideAboutTitleText}>
