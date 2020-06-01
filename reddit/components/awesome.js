@@ -49,7 +49,7 @@ const Awesome = ({ pageContext }) => {
                 </div>
                 <div className={styles.asideAwesomeItemInfo}>
                   <a className={styles.asideAwesomeItemInfoLink} href={v.url}>
-                    {v.name}
+                    a/{v.name}
                   </a>
                   <p className={styles.asideAwesomeItemInfoText}>{v.author}</p>
                 </div>
