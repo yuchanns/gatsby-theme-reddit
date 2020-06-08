@@ -6,6 +6,10 @@ module.exports = {
       name: 'yuchanns',
       avatar: '/yuchanns.jpg'
     },
+    algolia: {
+      appId: 'GLFEJXFJQV',
+      searchKey: 'b8816043586aab7eab809c57bf30f6d7'
+    },
     nav: [
       {
         name: 'About',

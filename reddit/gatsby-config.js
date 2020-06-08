@@ -1,3 +1,6 @@
+const queries = require("./utils/algolia")
+require("dotenv").config()
+
 module.exports = (options = {}) => {
   return {
     siteMetadata: {
@@ -131,7 +134,16 @@ module.exports = (options = {}) => {
               }
           }
         },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.REDDIT_ALGOLIA_APP_ID,
+        apiKey: process.env.REDDIT_ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
     ].filter(Boolean)
   }
 }

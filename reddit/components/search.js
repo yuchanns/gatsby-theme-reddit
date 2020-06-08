@@ -1,6 +1,7 @@
 import React from 'react'
 import SvgIcon from './icons/svg-icon'
 import styles from '../styles/header.module.scss'
+import RealSearch from './search/index'
 
 const Search = () => {
   return (
@@ -13,6 +14,7 @@ const Search = () => {
         type="search"
         id="reddit-header-search"
         placeholder="Search" />
+      <RealSearch indexName="Posts" />
     </div>
   )
 }
