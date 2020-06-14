@@ -36,6 +36,10 @@ input, textarea, [contenteditable] {
   font-family: inherit;
 }
 
+input[type=search]::-webkit-search-cancel-button{
+  padding-right: 30px;
+}
+
 :focus {
   outline: none;
 }
@@ -49,25 +53,39 @@ input, textarea, [contenteditable] {
   border-radius: 100%;
 }
 
-.ais-Hits {
-  z-index: 71;
-  left: 423px;
-  top: 41.5px;
-  width: 100%;
-  margin-top: 6px;
-  overflow: scroll;
-  background-color: $body;
-  border-top-width: 1px;
-  border: 1px solid $line;
-  border-top: 0 solid $line;
-  color: $bodyText;
-  padding: 0;
-  border-radius: 0 0 4px 4px;
-  box-sizing: border-box;
-  right: 0;
-  box-shadow: 0 2px 4px 0 $bodyTextAlpha20;
-  &-list {
-    list-style: none;
+.ais {
+  &-PoweredBy {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    &-text {
+      display: none;
+    }
+    &-logo {
+      height: 10px;
+      width: 50px;
+    }
+  }
+  &-Hits {
+    z-index: 71;
+    left: 423px;
+    top: 41.5px;
+    width: 100%;
+    margin-top: 6px;
+    overflow: scroll;
+    background-color: $body;
+    border-top-width: 1px;
+    border: 1px solid $line;
+    border-top: 0 solid $line;
+    color: $bodyText;
+    padding: 0;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    right: 0;
+    box-shadow: 0 2px 4px 0 $bodyTextAlpha20;
+    &-list {
+      list-style: none;
+    }
   }
 }
 
