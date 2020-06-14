@@ -4,7 +4,7 @@ import styles from '../../styles/header.module.scss'
 
 const HitComp = ({ hit }) => {
   return (
-    <Link className={styles.headerSearchHit} to={`${hit.path}`}>
+    <Link className={styles.headerSearchHit} to={`/r${hit.path}`}>
       <div style={{ width: '100%' }}>
         <div className={styles.headerSearchHitTitle}>{hit.title}</div>
         <div>
