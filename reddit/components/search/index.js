@@ -3,7 +3,7 @@ import { InstantSearch } from 'react-instantsearch-dom'
 import algoliasearch from 'algoliasearch/lite'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Search = ({ indexName }) => {
+const Search = ({ indexName, children, setQuery }) => {
   const { site: { siteMetadata: { algolia } } } = useStaticQuery(graphql`
     query {
       site {
@@ -24,7 +24,10 @@ const Search = ({ indexName }) => {
   return (
     <InstantSearch
       searchClient={client}
-      indexName={indexName} />
+      onSearchStateChange={({ query }) => setQuery(query)}
+      indexName={indexName}>
+      {children}
+    </InstantSearch>
   )
 }
 

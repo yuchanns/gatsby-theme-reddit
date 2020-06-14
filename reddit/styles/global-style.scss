@@ -49,4 +49,26 @@ input, textarea, [contenteditable] {
   border-radius: 100%;
 }
 
+.ais-Hits {
+  z-index: 71;
+  left: 423px;
+  top: 41.5px;
+  width: 100%;
+  margin-top: 6px;
+  overflow: scroll;
+  background-color: $body;
+  border-top-width: 1px;
+  border: 1px solid $line;
+  border-top: 0 solid $line;
+  color: $bodyText;
+  padding: 0;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  right: 0;
+  box-shadow: 0 2px 4px 0 $bodyTextAlpha20;
+  &-list {
+    list-style: none;
+  }
+}
+
 @import './fonts.scss';
