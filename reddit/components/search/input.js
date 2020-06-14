@@ -9,5 +9,6 @@ export default connectSearchBox(({ refine, setShow }) => (
     id="reddit-header-search"
     onChange={e => refine(e.target.value)}
     onFocus={() => setShow(true)}
+    autocomplete="off"
     placeholder="Search Powered By Algolia"/>
 ))
