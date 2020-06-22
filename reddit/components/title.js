@@ -39,7 +39,7 @@ const Title = ({ show = false, pageContext = {}, detail = false }) => {
                         width: '56px'
                       }}
                       className={styles.titleBackgroundTopIcon}></div>
-                    <span className={styles.titleBackgroundTopText}>{`r/${pageContext.category.path}`}</span>
+                    <span className={styles.titleBackgroundTopText}>{pageContext.category.url.slice(1)}</span>
                   </>
                 )}
               </div>
