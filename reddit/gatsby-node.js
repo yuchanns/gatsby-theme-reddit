@@ -36,6 +36,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const topPosts = await usePosts(graphql, true)
   usePagination(posts, path.resolve(`public/paginationJson`), 'index', 5, hash)
   usePagination(topPosts, path.resolve(`public/paginationJson`), 'top', 5, hash)
+  // every page
+  const postComponent = path.resolve(__dirname, 'layouts/post.js')
+  posts.forEach(post => {
+    createPage({
+      path: post.url,
+      component: postComponent,
+      context: {
+        post: post,
+        category: post.category
+      }
+    })
+  })
   // categories posts
   const categories = await useCategories(graphql)
   const categoryComponent = path.resolve(__dirname, 'layouts/category.js')

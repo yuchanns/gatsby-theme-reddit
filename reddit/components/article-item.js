@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/article.module.scss'
 import { formatDistanceToNow } from 'date-fns'
+import { navigate } from 'gatsby'
 
 const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
   const VoteButton = ({ children }) => {
@@ -27,6 +28,13 @@ const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
     }
     excerptClass += ` ${styles.articleSkeletonContent}`
   }
+  const toPost = path => {
+    return e => {
+      if (e.target) {
+        navigate(path)
+      }
+    }
+  }
   return (
     <>
       <div className={itemClass}>
@@ -41,7 +49,12 @@ const ArticleItem = ({ post = {}, skeleton = false, loading = false }) => {
             </VoteButton>
           </div>
         </div>
-        <div className={styles.articleItemContent}>
+        <div
+          className={styles.articleItemContent}
+          role="button"
+          tabIndex="0"
+          onKeyDown={toPost(post.url)}
+          onClick={toPost(post.url)}>
           <div className={styles.articleItemContentInfo} style={loading ? {width: `232px`} : {}}>
             <div className={infoInner}>
               <div className={styles.articleItemContentInfoInnerLabel}>

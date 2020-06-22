@@ -20,6 +20,7 @@ module.exports = async (graphql, top = false, category = null) => {
             logo
             name
             path
+            bg
           }
           author {
             name
@@ -29,6 +30,7 @@ module.exports = async (graphql, top = false, category = null) => {
       allMarkdownRemark(sort: ${sort}, filter: {${filters.join(`, `)}}) {
         nodes {
           snippet
+          fileAbsolutePath
           frontmatter {
             author
             category
@@ -48,17 +50,19 @@ module.exports = async (graphql, top = false, category = null) => {
       desc: category.desc,
       logo: category.logo,
       name: category.name,
+      bg: category.bg
     }
   })
 
   return nodes.map(node => {
+    const fileName = node.fileAbsolutePath.split('/')
     return {
       excerpt: node.snippet,
       author: node.frontmatter.author || name,
       category: communities[node.frontmatter.category] || {},
       date: node.frontmatter.date,
       title: node.frontmatter.title,
-      url: `/r/${node.frontmatter.category}/${node.frontmatter.title}`
+      url: `/r/${node.frontmatter.category}/${fileName[fileName.length - 2]}`
     }
   })
 }

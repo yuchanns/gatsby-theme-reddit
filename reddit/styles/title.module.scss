@@ -16,6 +16,31 @@
     @media (min-width: $innerMinWidth) {
       padding: 8px 16px;
     }
+    &-top {
+      &-icon {
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background: $button;
+        border: 2px solid $body;
+        float: left;
+        margin-right: 8px;
+        box-sizing: border-box;
+        background-size: 52px;
+      }
+      &-text {
+        @media (min-width: 960px) {
+          padding-right: 16px;
+        }
+        padding-top: 14px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 26px;
+        color: #fcfcfb;
+        flex: 1 1 100%;
+        float: left;
+      }
+    }
     &-route {
       text-decoration: none;
     }
@@ -26,8 +51,8 @@
       position: relative;
     }
     &-container {
-      left: -8px;
-      height: 112px;
+      // left: -8px;
+      // height: 112px;
       background-position: 50%;
       background-repeat: no-repeat;
       background-size: auto;
@@ -35,6 +60,38 @@
       top: 50%;
       transform: translateY(-50%);
       // width: 512px;
+    }
+  }
+  &-category {
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: static;
+    &-block {
+      max-width: 1200px;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+      min-width: 260px;
+      @media (min-width: $innerMinWidth) {
+        padding: 0 16px;
+      }
+    }
+    &-text {
+      border-bottom: 3px solid;
+      margin-left: 0;
+      padding-bottom: 1px;
+      margin: 0 5px;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 32px;
+      display: inline-block;
+      padding-top: 4px;
     }
   }
   &-label {

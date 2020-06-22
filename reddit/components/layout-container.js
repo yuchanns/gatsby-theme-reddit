@@ -12,13 +12,14 @@ const LayoutContainer = ({
   pageContext = {},
   asideComponent,
   totalCount,
+  detail,
 }) => {
   return (
     <div className={styles.container}>
       <div className={styles.containerOuter}>
         <Background />
         <div style={{zIndex: 3}}>
-          <Title show={show} pageContext={pageContext} />
+          <Title show={show} pageContext={pageContext} detail={detail} />
           <div className={styles.containerInner}>
             <div className={styles.containerInnerMain}>{children}</div>
             <Aside pageContext={pageContext} totalCount={totalCount}>{asideComponent}</Aside>
