@@ -2,7 +2,7 @@ const postQuery = `{
   posts: allMarkdownRemark {
     nodes {
       objectID: id
-      excerpt(pruneLength: 5000)
+      excerpt(pruneLength: 3000)
       fileAbsolutePath
       frontmatter {
         category
